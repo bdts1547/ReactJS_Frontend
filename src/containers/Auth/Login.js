@@ -1,6 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { push } from 'connected-react-router';
+
+import * as actions from '../../store/actions';
 
 import './Login.scss';
+import {handleLoginAPI} from '../../services/userService';
 
 class Login extends React.Component {
     constructor(props) {
@@ -9,6 +14,7 @@ class Login extends React.Component {
             username: "",
             password: "",
             isShowPassword: false,
+            errMessage: "",
         }
     }
 
@@ -28,6 +34,30 @@ class Login extends React.Component {
         this.setState({
             isShowPassword: !this.state.isShowPassword
         })
+    }
+
+    handleLogin = async (event) => {
+        this.setState({
+            errMessage: ""
+        })
+
+        try {
+            const loginInfo = await handleLoginAPI(this.state.username, this.state.password);
+            if (loginInfo && loginInfo.errCode !== 0) {
+                this.setState({
+                    errMessage: loginInfo.errMessage
+                })
+            }
+            if (loginInfo && loginInfo.errCode === 0) {
+                // todo
+                this.props.userLoginSuccess(loginInfo.user);
+                console.log('logged')
+            }
+        } catch (error) {
+            console.log(error)
+            
+        }
+
     }
 
 
@@ -61,7 +91,10 @@ class Login extends React.Component {
                             </div>
                         </div>
                         <div className="col-12">
-                            <button className='btn-login'>Login</button>
+                            <div className="text-error mb-2" style={{color: 'red'}}>{this.state.errMessage}</div>
+                            <button className='btn-login' onClick={(event) => this.handleLogin(event)}>
+                                Login
+                            </button>
                         </div>
                         <div className="forgot-password mt-2">
                             Forgot your password?
@@ -92,9 +125,13 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
+        navigate: (path) => dispatch(push(path)),
+        // adminLoginSuccess: (adminInfo) => dispatch(actions.adminLoginSuccess(adminInfo)),
+        userLoginFail: () => dispatch(actions.userLoginFail()),
+        userLoginSuccess: (userInfo) => dispatch(actions.userLoginSuccess(userInfo)),
 
     }
 }
 
-export default Login;
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
 
