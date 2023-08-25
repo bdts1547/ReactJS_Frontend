@@ -1,0 +1,217 @@
+.home-header-container {
+    height: 85px;
+    padding: 10px 170px;
+
+
+    .home-header-content {
+        display: flex;
+        height: 100%;
+
+        .left-content {
+            width: 25%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            i {
+                font-size: 30px;
+                color: grey;
+                margin-right: 10px;
+            }
+
+            .header-logo {
+                background: url(../../assets/logo.svg) center center no-repeat;
+                height: 100%;
+                width: 45%;
+            }
+        }
+
+        .mid-content {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #333333;
+
+            b {
+                font-size: 14px;
+            }
+
+            .sub-title {
+                font-size: 12px;
+                font-weight: lighter;
+                opacity: 0.85;
+            }
+        }
+
+        .right-content {
+            width: 25%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-size: 16px;
+            font-weight: 600;
+            color: grey;
+
+
+            .support {
+                cursor: pointer;
+
+                i {
+                    color: #45c3d2;
+                    margin-right: 8px;
+                }
+
+                .text-support {
+                }
+
+                .language-vn {
+                    margin: 0 8px;
+
+                    &.active {
+                        color: #45c3d2;
+                    }
+                }
+    
+                .language-vn {
+                    
+                }
+            }
+
+
+            .number-phone {
+                color: #45c3d2;
+                font-size: 15px;
+                cursor: pointer;
+            }
+
+
+        }
+    }
+}
+
+
+.home-banner-container {
+
+
+    .home-banner-content {
+        background: url(../../assets/background-banner.jpg);
+        background-color: #fff;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 770px;
+
+
+        .banner-top {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 75%;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.25),rgba(255, 255, 255, 0.1));
+            padding: 108px 0;
+
+            .banner-title {
+                color: #fff;
+                font-size: 36px;
+                text-shadow: 1px 1px 1px #333;
+                text-align: center;
+                margin-bottom: 16px;
+            }
+
+            .banner-search {
+                width: 500px;
+                height: 50px;
+                border-radius: 25px;
+                background-color: #f7d800;
+                display: flex;
+                align-items: center;
+                padding: 8px 20px;
+                font-size: 16px;
+
+
+                i {}
+
+                input {
+                    width: 100%;
+                    outline: none;
+                    border: none;
+                    background-color: #f7d800;
+                    padding-left: 16px;
+                }
+            }
+        }
+
+        .banner-bottom {
+            height: 25%;
+            display: flex;
+            align-items: flex-end;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.1),rgba(255, 255, 255, 0.9),rgba(255, 255, 255, 1));
+
+
+            .banner-options {
+                display: flex;
+                gap: 16px;
+                padding: 30px 0;
+                width: 100%;
+                justify-content: center;
+             
+
+                .option {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-decoration: none;
+                    color: #333;
+                    width: 150px;
+
+                    .specialized {
+                        background-image: url(../../assets/banner/specialized-exam.png);
+                    }
+
+                    .remote {
+                        background-image: url(../../assets/banner/remote-exam.png);
+                    }
+
+                    .general {
+                        background-image: url(../../assets/banner/general-exam.png);
+                    }
+
+                    .medical-test {
+                        background-image: url(../../assets/banner/medical-exam.png);
+                    }
+
+                    .mental-heath {
+                        background-image: url(../../assets/banner/mental-heath.png);
+                    }
+
+                    .dentist {
+                        background-image: url(../../assets/banner/dentist-exam.png);
+                    }
+
+                    div {
+                        width: 50px;
+                        height: 50px;
+                        background-size: 32px;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-color: #fff;
+                        border-radius: 50%;
+                    }
+
+                    .opt-title {
+                        font-size: 18px;
+                        text-align: center;
+
+                    }
+                }
+
+
+
+            }
+        }
+    }
+
+
+}
