@@ -51,10 +51,9 @@ class Login extends React.Component {
             if (loginInfo && loginInfo.errCode === 0) {
                 // todo
                 this.props.userLoginSuccess(loginInfo.user);
-                console.log('logged')
             }
         } catch (error) {
-            console.log(error)
+            alert(error)
             
         }
 

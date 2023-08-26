@@ -90,7 +90,7 @@ class UserManage extends Component {
                 alert(res.message)
             }
         } catch (error) {
-            console.log(error);
+            alert(error);
         }
        
     }

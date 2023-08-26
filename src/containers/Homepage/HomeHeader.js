@@ -1,14 +1,26 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import * as actions from '../../store/actions';
 
 import { FormattedMessage } from 'react-intl';
+import { LANGUAGES } from '../../utils/constant';
 
 
 
 class HomeHeader extends Component {
 
+
+
+    changeLanguage = (language) => {
+        // actions
+        this.props.changeLanguageApp(language);
+    }
+
+
     render() {
-        console.log(this.props)
+        console.log("props", this.props)
+        const language = this.props.language;
+        console.log(language)
         return (
             <>
                 <div className="home-header-container">
@@ -39,8 +51,10 @@ class HomeHeader extends Component {
                             <div className="support">
                                 <i className="fas fa-question-circle"></i>
                                 <span className='text-support'><FormattedMessage id="home-header.support" /></span>
-                                <span className="language-vn active">VN</span>
-                                <span className="language-en">EN</span>
+                                <span onClick={() => this.changeLanguage(LANGUAGES.VI)} 
+                                    className={ language === 'vi' ? "language-vi active" : "language-vi"}>VN</span>
+                                <span onClick={() => this.changeLanguage(LANGUAGES.EN)} 
+                                    className={ language === 'en' ? "language-en active" : "language-en"}>EN</span>
                             </div>
                             <div className="number-phone">024-7301-2468</div>
                         </div>
@@ -102,12 +116,13 @@ class HomeHeader extends Component {
 const mapStateToProps = state => {
     return {
         isLoggedIn: state.user.isLoggedIn,
-        lang: state.app.language,
+        language: state.app.language,
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
+        changeLanguageApp: (language) => dispatch(actions.changeLanguage(language))
     };
 };
 
