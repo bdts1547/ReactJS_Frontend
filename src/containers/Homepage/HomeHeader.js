@@ -5,6 +5,7 @@ import * as actions from '../../store/actions';
 import { FormattedMessage } from 'react-intl';
 import { LANGUAGES } from '../../utils/constant';
 
+import Speciality from './section/Speciality';
 
 
 class HomeHeader extends Component {
@@ -12,15 +13,12 @@ class HomeHeader extends Component {
 
 
     changeLanguage = (language) => {
-        // actions
         this.props.changeLanguageApp(language);
     }
 
 
     render() {
-        console.log("props", this.props)
         const language = this.props.language;
-        console.log(language)
         return (
             <>
                 <div className="home-header-container">

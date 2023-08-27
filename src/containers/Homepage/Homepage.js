@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import HomeHeader from './HomeHeader';
 import './HomeHeader.scss';
+import Speciality from './section/Speciality';
 
 class Homepage extends Component {
 
@@ -11,7 +12,12 @@ class Homepage extends Component {
 
     render() {
         return (
-            <div> <HomeHeader /> </div>
+            <div> 
+                <HomeHeader /> 
+                <Speciality />
+                
+            </div>
+
         );
     }
 

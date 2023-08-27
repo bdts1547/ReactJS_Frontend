@@ -1,0 +1,97 @@
+.home-slider-content {
+    border: 1px solid red;
+    margin-bottom: 300px;
+    background-color: #f5f5f5;
+
+
+
+    .section-speciality {
+        height: inherit;
+        margin: 0 325px;
+
+        .speciality-header {
+            display: flex;
+            justify-content: space-between;
+            padding: 32px 0 12px 0;
+
+            .speciality-title {
+                font-size: 24px;
+                font-weight: bold;
+            }
+
+            .btn-more {
+                background: #ebebeb;
+                text-transform: uppercase;
+                display: inline-block;
+                padding: 10px 15px;
+                color: #282e41;
+                text-decoration: none;
+                margin-right: 8px;
+            }
+        }
+
+        .speciality-body {
+            padding: 16px 0 64px 0;
+
+
+            .speciality-item {
+
+                .customize-img {
+                    background: url(../../../assets/speciality/co-xuong-khop.jpg);
+                    width: 97%;
+                    height: 180px;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-color: #eee;
+                }
+
+                .speciality-title {
+                    color: #666;
+                    padding: 5px 0;
+                    font-size: 16px;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: #45c3d2;
+                    }
+
+                }
+            }
+
+
+        }
+
+
+
+
+    }
+
+}
+
+
+
+.slick-prev {
+    border: 2px solid #d7d7d7 !important;
+    left: -10 !important;
+    width: 50px !important;
+    background: #fff !important;
+    height: 50px !important;
+    z-index: 1 !important;
+}
+
+.slick-next {
+    border: 2px solid #d7d7d7 !important;
+    right: -12 !important;
+    width: 50px !important;
+    height: 50px !important;
+    background: #fff !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    content: '←';
+    color: grey !important;
+    font-size: 32px !important;
+    line-height: 50px !important;
+}
