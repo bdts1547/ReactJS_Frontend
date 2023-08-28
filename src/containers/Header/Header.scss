@@ -10,10 +10,14 @@
     position: relative;
 
 
+    
     .languages {
         font-weight: bold;
         cursor: pointer;
-
+        
+        .welcome {
+            margin-right: 8px;
+        }
         
         .language-en, .language-vi {
             margin-right: 8px;

@@ -1,15 +1,52 @@
 export const adminMenu = [
-    { //hệ thống
-        name: 'menu.system.header', menus: [
+    { 
+        // User manage
+        name: 'menu.admin.user',
+        menus: [
             {
-                name: 'menu.system.system-administrator.header',
-                subMenus: [
-                    { name: 'menu.system.system-administrator.user-manage', link: '/system/user-manage' },
-                    { name: 'menu.system.system-administrator.redux-manage', link: '/system/redux-manage' },
-                    // { name: 'menu.system.system-administrator.register-package-group-or-account', link: '/system/register-package-group-or-account' },
-                ]
+                name: 'menu.admin.manage-admin', link: '/system/manage-admin'
             },
-            // { name: 'menu.system.system-parameter.header', link: '/system/system-parameter' },
+            {
+                name: 'menu.admin.manage-doctor', link: '/system/manage-doctor'
+            }, 
+            {
+                name: 'menu.admin.crud', link: '/system/crud'
+            }, 
+            {
+                name: 'menu.admin.crud-redux', link: '/system/crud-redux'
+            }
         ]
+
     },
+    { 
+        // Speciality manage
+        name: 'menu.admin.speciality',
+        menus: [
+            {
+                name: 'menu.admin.manage-admin', link: '/system/manage-admin'
+            },
+            
+        ]
+
+    },
+    { 
+        // User manage
+        name: 'menu.admin.clinic',
+        menus: [
+            {
+                name: 'menu.admin.manage-admin', link: '/system/manage-admin'
+            }
+        ]
+
+    },
+    { 
+        // User manage
+        name: 'menu.admin.handbook',
+        menus: [
+            {
+                name: 'menu.admin.manage-admin', link: '/system/manage-admin'
+            }
+        ]
+
+    }
 ];
