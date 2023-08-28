@@ -5,7 +5,7 @@ import * as actions from '../../store/actions';
 import { FormattedMessage } from 'react-intl';
 import { LANGUAGES } from '../../utils/constant';
 
-import Speciality from './section/Speciality';
+import './HomeHeader.scss';
 
 
 class HomeHeader extends Component {
