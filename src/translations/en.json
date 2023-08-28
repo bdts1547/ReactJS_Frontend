@@ -22,9 +22,6 @@
         "mental-health": "Mental health",
         "dentist-exam": "Dentist examination"
     },
-
-
-
     "common": {
         "add": "Add",
         "edit": "Edit",
@@ -57,7 +54,7 @@
             "system-administrator": {
                 "header": "System Administrator",
                 "user-manage": "User manage",
-                "product-manage": "Package manage",
+                "redux-manage": "Package manage redux",
                 "register-package-group-or-account": "Register service package for group/account"
             },
             "system-parameter": {

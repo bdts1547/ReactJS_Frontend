@@ -1,6 +1,9 @@
 .home-header-container {
     height: 85px;
     padding: 10px 170px;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
 
 
     .home-header-content {
