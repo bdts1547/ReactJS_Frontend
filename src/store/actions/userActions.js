@@ -9,10 +9,10 @@ export const userLoginSuccess = (userInfo) => ({
     userInfo: userInfo
 })
 
-export const userLoginFail = (userInfo) => ({
+export const userLoginFail = () => ({
     type: actionTypes.USER_LOGIN_SUCCESS,
 })
 
-export const processLogout = (userInfo) => ({
+export const processLogout = () => ({
     type: actionTypes.PROCESS_LOGOUT,
 })
