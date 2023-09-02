@@ -4,16 +4,16 @@ export const adminMenu = [
         name: 'menu.admin.user',
         menus: [
             {
-                name: 'menu.admin.manage-admin', link: '/system/manage-admin'
+                name: 'menu.admin.manage-admin', link: '/system/user-redux'
             },
             {
-                name: 'menu.admin.manage-doctor', link: '/system/manage-doctor'
+                name: 'menu.admin.manage-doctor', link: '/system/user-manage'
             }, 
             {
-                name: 'menu.admin.crud', link: '/system/crud'
+                name: 'menu.admin.crud', link: '/system/user-manage'
             }, 
             {
-                name: 'menu.admin.crud-redux', link: '/system/crud-redux'
+                name: 'menu.admin.crud-redux', link: '/system/user-manage'
             }
         ]
 

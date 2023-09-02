@@ -1,24 +1,24 @@
-#customers {
+#table-user {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
 }
 
-#customers td,
-#customers th {
+#table-user td,
+#table-user th {
     border: 1px solid #ddd;
     padding: 8px;
 }
 
-#customers tr:nth-child(even) {
+#table-user tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-#customers tr:hover {
+#table-user tr:hover {
     background-color: #ddd;
 }
 
-#customers th {
+#table-user th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
@@ -54,37 +54,3 @@
     }
 }
 
-
-
-.modal-user-container {
-    .modal-user-body {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-
-        .input-container {
-            display: flex;
-            flex-direction: column;
-            width: 49%;
-
-            &.max-w {
-                width: 100%;
-            }
-
-            input {
-                outline: none;
-                border: 1px solid grey;
-                padding: 4px 8px;
-            }
-        }
-    }
-}
-
-.modal-header {
-    button {
-        background: transparent;
-        color: white;
-        font-size: 42px;
-        border: none;
-    }
-}

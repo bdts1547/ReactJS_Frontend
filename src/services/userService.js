@@ -6,7 +6,8 @@ const handleLoginAPI = (email, password) => {
 }
 
 const getAllUsers = id => {
-    // id=all is get all user, id=x get one user
+    // id=all is get all user
+    // id=x get one user
     return axios.get(`/api/get-all-users?id=${id}`);
 }
 

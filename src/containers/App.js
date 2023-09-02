@@ -46,7 +46,7 @@ class App extends Component {
                     <div className="main-container">
 
 
-                        <CustomScrollbars style={{ height: "100vh", width: '100%'}}>
+                        <CustomScrollbars style={{ height: "100vh", width: '100%' }}>
                             <span className="content-container">
                                 <Switch>
                                     <Route path={path.HOME} exact component={(Home)} />
@@ -57,12 +57,26 @@ class App extends Component {
                             </span>
                         </CustomScrollbars>
 
-                        <ToastContainer
+                        {/* <ToastContainer
                             className="toast-container" toastClassName="toast-item" bodyClassName="toast-item-body"
                             autoClose={false} hideProgressBar={true} pauseOnHover={false}
                             pauseOnFocusLoss={true} closeOnClick={false} draggable={false}
                             closeButton={<CustomToastCloseButton />}
+                        /> */}
+
+                        <ToastContainer
+                            position="top-right"
+                            autoClose={5000}
+                            hideProgressBar={false}
+                            newestOnTop={false}
+                            closeOnClick
+                            rtl={false}
+                            pauseOnFocusLoss
+                            draggable
+                            pauseOnHover
+                            theme="light"
                         />
+                        <ToastContainer />
                     </div>
                 </Router>
             </Fragment>
