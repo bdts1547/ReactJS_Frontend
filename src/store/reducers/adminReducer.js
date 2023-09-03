@@ -83,6 +83,18 @@ const adminReducer = (state = initialState, action) => {
 
 
 
+            // FETCH TOP DOCTOR
+        case actionTypes.FETCH_TOP_DOCTOR_SUCCESS:
+            state.doctors = action.doctors
+            return {
+                ...state,
+            }
+        case actionTypes.FETCH_TOP_DOCTOR_FAILED:
+            state.users = []
+            return {
+                ...state,
+            }
+
         default:
             return state;
     }

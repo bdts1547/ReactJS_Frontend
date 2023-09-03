@@ -29,6 +29,8 @@ const actionTypes = Object.freeze({
 
     DELETE_USER_SUCCESS: "DELETE_USER_SUCCESS",
     DELETE_USER_FAILED: "DELETE_USER_FAILED",
+
+
     
 
 
@@ -37,6 +39,12 @@ const actionTypes = Object.freeze({
     USER_LOGIN_SUCCESS: 'USER_LOGIN_SUCCESS',
     USER_LOGIN_FAIL: 'USER_LOGIN_FAIL',
     PROCESS_LOGOUT: 'PROCESS_LOGOUT',
+
+
+
+    // home
+    FETCH_TOP_DOCTOR_SUCCESS: "FETCH_TOP_DOCTOR_SUCCESS",
+    FETCH_TOP_DOCTOR_FAILED: "FETCH_TOP_DOCTOR_FAILED",
 })
 
 export default actionTypes;

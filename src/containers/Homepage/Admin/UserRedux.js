@@ -47,7 +47,7 @@ class UserRedux extends Component {
             const genders = this.props.genderRedux;
             this.setState({
                 genderData: genders,
-                gender: genders && genders.length > 0 ? genders[0].key : '', // Get value default
+                gender: genders && genders.length > 0 ? genders[0].code : '', // Get value default
             })
         }
 
@@ -55,7 +55,7 @@ class UserRedux extends Component {
             const positions = this.props.positionRedux;
             this.setState({
                 positionData: positions,
-                positionId: positions && positions.length > 0 ? positions[0].key : '',
+                positionId: positions && positions.length > 0 ? positions[0].code : '',
             })
         }
 
@@ -63,7 +63,7 @@ class UserRedux extends Component {
             const roles = this.props.roleRedux;
             this.setState({
                 roleData: roles,
-                roleId: roles && roles.length > 0 ? roles[0].key : '',
+                roleId: roles && roles.length > 0 ? roles[0].code : '',
             })
         }
 
@@ -79,9 +79,9 @@ class UserRedux extends Component {
                 firstName: '',
                 lastName: '',
                 address: '',
-                gender: genders && genders.length > 0 ? genders[0].key : '', // Get value default
-                positionId: positions && positions.length > 0 ? positions[0].key : '',
-                roleId: roles && roles.length > 0 ? roles[0].key : '',
+                gender: genders && genders.length > 0 ? genders[0].code : '', // Get value default
+                positionId: positions && positions.length > 0 ? positions[0].code : '',
+                roleId: roles && roles.length > 0 ? roles[0].code : '',
                 phoneNumber: '',
                 image: '',
                 previewImgAvatar: '',
@@ -142,7 +142,7 @@ class UserRedux extends Component {
         if (!isValid) return;
 
         const { email, password, firstName, lastName, address,
-            gender, roleId, positionId, phoneNumber, image} = this.state;
+            gender, roleId, positionId, phoneNumber, image } = this.state;
 
         if (action === CRUD_action.CREATE) {
             try {
@@ -166,7 +166,7 @@ class UserRedux extends Component {
         if (action === CRUD_action.EDIT) {
             try {
                 await this.props.editUserRedux({
-                    id : this.state.id,
+                    id: this.state.id,
                     email: email,
                     firstName: firstName,
                     lastName: lastName,
@@ -270,7 +270,7 @@ class UserRedux extends Component {
                                         {genderData && genderData.length > 0 &&
                                             genderData.map((item, index) => {
                                                 return (
-                                                    <option key={index} value={item.key}>
+                                                    <option key={index} value={item.code}>
                                                         {language === LANGUAGES.VI ? item.valueVi : item.valueEn}
                                                     </option>
                                                 )
@@ -285,7 +285,7 @@ class UserRedux extends Component {
                                         {positionData && positionData.length > 0 &&
                                             positionData.map((item, index) => {
                                                 return (
-                                                    <option key={index} value={item.key}>
+                                                    <option key={index} value={item.code}>
                                                         {language === LANGUAGES.VI ? item.valueVi : item.valueEn}
                                                     </option>
                                                 )
@@ -300,7 +300,7 @@ class UserRedux extends Component {
                                         {roleData && roleData.length > 0 &&
                                             roleData.map((item, index) => {
                                                 return (
-                                                    <option key={index} value={item.key}>
+                                                    <option key={index} value={item.code}>
                                                         {language === LANGUAGES.VI ? item.valueVi : item.valueEn}
                                                     </option>
                                                 )
