@@ -1,6 +1,8 @@
 import actionTypes from './actionTypes';
-import { createNewUser, getAllCode, getAllUsers, deleteUser,
-            updateUser, getTopDoctors } from '../../services/userService';
+import {
+    createNewUser, getAllCode, getAllUsers, deleteUser, updateUser, getTopDoctors,
+    getAllDoctors, getDoctorById, createDetailDoctorService, editDetailDoctorService
+} from '../../services/userService';
 import { toast } from 'react-toastify';
 
 // FETCH DATA GENDER
@@ -242,5 +244,96 @@ export const fetchTopDoctorsSuccess = (doctors) => ({
 export const fetchTopDoctorsFailed = () => ({
     type: actionTypes.FETCH_TOP_DOCTOR_FAILED
 })
+
+
+// FETCH ALL DOCTOR
+export const fetchAllDoctors = () => {
+    return async (dispatch, getState) => {
+        try {
+            const res = await getAllDoctors();
+            if (res && res.errCode === 0) {
+                dispatch({
+                    type: actionTypes.FETCH_ALL_DOCTOR_SUCCESS,
+                    doctors: res.doctors
+                });
+            } else {
+                dispatch({ type: actionTypes.FETCH_ALL_DOCTOR_FAILED });
+                console.log(res.message);
+            }
+        } catch (error) {
+            dispatch({ type: actionTypes.FETCH_ALL_DOCTOR_FAILED });
+            console.log('fetchAllDoctors error', error);
+        }
+    }
+}
+
+
+
+// FETCH_DOCTOR_BY_ID
+export const fetchDoctorById = (id) => {
+    return async (dispatch, getState) => {
+        try {
+            const res = await getDoctorById(id);
+            if (res && res.errCode === 0) {
+                dispatch({
+                    type: actionTypes.FETCH_DOCTOR_BY_ID_SUCCESS,
+                    doctor: res.doctor,
+                });
+            } else {
+                dispatch({ type: actionTypes.FETCH_DOCTOR_BY_ID_FAILED });
+                console.log(res.message);
+            }
+        } catch (error) {
+            dispatch({ type: actionTypes.FETCH_DOCTOR_BY_ID_FAILED });
+            console.log('fetchDoctorById error', error);
+        }
+    }
+}
+
+
+
+// CREATE DETAIL DOCTOR
+export const createDetailDoctor = (data) => {
+    return async (dispatch, getState) => {
+        try {
+            const res = await createDetailDoctorService(data);
+            if (res && res.errCode === 0) {
+                toast.success(res.message);
+                dispatch({ type: actionTypes.CREATE_DETAIL_DOCTOR_SUCCESS });
+            } else {
+                toast.error(res.message);
+                dispatch({ type: actionTypes.CREATE_DETAIL_DOCTOR_FAILED });
+                console.log(res.message);
+            }
+        } catch (error) {
+            toast.error(error);
+            dispatch({ type: actionTypes.CREATE_DETAIL_DOCTOR_FAILED });
+            console.log('createDetailDoctor error', error);
+        }
+    }
+}
+
+
+
+// CREATE DETAIL DOCTOR
+export const editDetailDoctor = (data) => {
+    return async (dispatch, getState) => {
+        try {
+            const res = await editDetailDoctorService(data);
+            if (res && res.errCode === 0) {
+                toast.success(res.message);
+                dispatch({ type: actionTypes.EDIT_DETAIL_DOCTOR_SUCCESS });
+            } else {
+                toast.error(res.message);
+                dispatch({ type: actionTypes.EDIT_DETAIL_DOCTOR_FAILED });
+                console.log(res.message);
+            }
+        } catch (error) {
+            toast.error(error);
+            dispatch({ type: actionTypes.EDIT_DETAIL_DOCTOR_FAILED });
+            console.log('editDetailDoctor error', error);
+        }
+    }
+}
 
 

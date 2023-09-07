@@ -1,0 +1,21 @@
+
+
+
+.manage-doctor-container {
+
+    .manage-doctor-header {
+        
+        .infor-select {
+            display: flex;
+            gap: 16px;
+
+            .doctor-select {
+                width: 40%;
+            }
+
+            .doctor-desc {
+                width: 60%;
+            }
+        }
+    }
+}

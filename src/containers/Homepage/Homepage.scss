@@ -29,6 +29,10 @@
     line-height: 50px !important;
 }
 
+.slick-disabled {
+    display: none !important;
+}
+
 /*#endregion slick*/
 
 
@@ -134,7 +138,7 @@
 
 
             .item-customize {
-                background-image: url(../../assets/outstanding-doctor/105401-bsckii-tran-minh-khuyen.jpg);
+                background-image: url(../../assets/outstanding-doctor/khuyenmt.jpg);
                 width: 120px;
                 height: 120px;
                 background-position: center center;

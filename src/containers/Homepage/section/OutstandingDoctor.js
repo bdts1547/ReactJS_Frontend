@@ -28,7 +28,7 @@ class OutstandingDoctor extends Component {
 
     render() {
         let { topDoctors } = this.state;
-        topDoctors = topDoctors.concat(topDoctors).concat(topDoctors);
+        console.log(topDoctors)
 
         return (
             <div className="home-slider-content">
@@ -41,11 +41,14 @@ class OutstandingDoctor extends Component {
                         <Slider {...this.props.settings} style={{ height: '100%' }}>
                             {topDoctors && topDoctors.length > 0 &&
                                 topDoctors.map((doctor, index) => {
+                                    const imageBase64 = new Buffer(doctor.image, 'base64').toString('binary');
                                     return (
                                         <div className="section-item" key={index}>
-                                            <div className='item-customize'></div>
-                                            <div className='item-title'>{doctor.firstName} - {doctor.lastName}</div>
-                                            <div className='item-subtitle'>{doctor.positionData.valueVi}</div>
+                                            <div className='item-customize' style={{ backgroundImage: `url(${imageBase64})`}}></div>
+                                            <div className='item-title'>
+                                                {doctor.positionData.valueVi}, {doctor.lastName} {doctor.firstName}
+                                            </div>
+                                            <div className='item-subtitle'>Chuyên khoa</div>
                                         </div>
                                     )
                                 })
