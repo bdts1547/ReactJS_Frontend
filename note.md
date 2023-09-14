@@ -1,5 +1,7 @@
 
 
+Note z-index
+- home-header-container : z-index = 1
 
 
 #### Fire event: 

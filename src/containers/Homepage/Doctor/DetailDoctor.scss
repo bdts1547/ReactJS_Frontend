@@ -1,0 +1,51 @@
+.detail-doctor-container {
+
+    .detail-doctor-header {
+        padding: 0 325px;
+
+
+        .doctor-navigate {
+            color: #45c3d2;
+            font-size: 16px;
+
+            &:hover {
+                cursor: pointer;
+                opacity: 0.7;
+            }
+        }
+
+        .doctor-header {
+            display: flex;
+            gap: 24px;
+
+
+
+            .doctor-img {
+                width: 120px;
+                height: 120px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                border-radius: 50%;
+            }
+
+            .doctor-intro {
+
+                .doctor-desc {
+
+                    white-space: break-spaces;
+                }
+            }
+        }
+    }
+
+    .detail-doctor-body {
+        border-top: 1px solid #ccc;
+        background-color: #f5f5f5;
+        padding: 0 325px;
+
+    }
+
+
+
+}

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 import * as actions from '../../store/actions';
+
 
 import { FormattedMessage } from 'react-intl';
 import { LANGUAGES } from '../../utils/constant';
@@ -16,6 +18,10 @@ class HomeHeader extends Component {
         this.props.changeLanguageApp(language);
     }
 
+    handleNavigateHome = (event) => {
+        this.props.history.push('/home');
+    }
+
 
     render() {
         const language = this.props.language;
@@ -25,7 +31,9 @@ class HomeHeader extends Component {
                     <div className="home-header-content">
                         <div className="left-content">
                             <i className="fas fa-bars"></i>
-                            <div className="header-logo"></div>
+                            <div className="header-logo"
+                                onClick={(event) => this.handleNavigateHome(event)}
+                            ></div>
                         </div>
                         <div className="mid-content">
                             <div className="child-content">
@@ -58,53 +66,55 @@ class HomeHeader extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="home-banner-container">
-                    <div className="home-banner-content">
-                        <div className="banner-top">
-                            <div className="banner-title">
-                                <div className="title-1"><FormattedMessage id="banner.medical-background" /></div>
-                                <div className="title-2"><b><FormattedMessage id="banner.health-care" /></b></div>
+                {this.props.isOpenBanner && 
+                    <div className="home-banner-container">
+                        <div className="home-banner-content">
+                            <div className="banner-top">
+                                <div className="banner-title">
+                                    <div className="title-1"><FormattedMessage id="banner.medical-background" /></div>
+                                    <div className="title-2"><b><FormattedMessage id="banner.health-care" /></b></div>
+                                </div>
+                                <div className="banner-search">
+                                    <i className='fas fa-search'></i>
+                                    <input type="text" placeholder='Tìm phòng khám'/>
+                                </div>
                             </div>
-                            <div className="banner-search">
-                                <i className='fas fa-search'></i>
-                                <input type="text" placeholder='Tìm phòng khám'/>
-                            </div>
-                        </div>
-                        <div className="banner-bottom">
-                            <div className="banner-download">
-                                <div className="download-chplay"></div>
-                                <div className="download-ios"></div>
-                            </div>
-                            <div className="banner-options">
-                                <a className='option'>
-                                    <div className='specialized'></div>
-                                    <b className="opt-title"><FormattedMessage id="banner.specialize-exam" /></b>
-                                </a>
-                                <a className='option'>
-                                    <div className='remote'></div>
-                                    <b className="opt-title"><FormattedMessage id="banner.remote-exam" /></b>
-                                </a>
-                                <a className='option'>
-                                    <div className='general'></div>
-                                    <b className="opt-title"><FormattedMessage id="banner.general-exam" /></b>
-                                </a>
-                                <a className='option'>
-                                    <div className='medical-test'></div>
-                                    <b className="opt-title"><FormattedMessage id="banner.medical-test" /></b>
-                                </a>
-                                <a className='option'>
-                                    <div className='mental-heath'></div>
-                                    <b className="opt-title"><FormattedMessage id="banner.mental-health" /></b>
-                                </a>
-                                <a className='option'>
-                                    <div className='dentist'></div>
-                                    <b className="opt-title"><FormattedMessage id="banner.dentist-exam" /></b>
-                                </a>
+                            <div className="banner-bottom">
+                                <div className="banner-download">
+                                    <div className="download-chplay"></div>
+                                    <div className="download-ios"></div>
+                                </div>
+                                <div className="banner-options">
+                                    <a className='option'>
+                                        <div className='specialized'></div>
+                                        <b className="opt-title"><FormattedMessage id="banner.specialize-exam" /></b>
+                                    </a>
+                                    <a className='option'>
+                                        <div className='remote'></div>
+                                        <b className="opt-title"><FormattedMessage id="banner.remote-exam" /></b>
+                                    </a>
+                                    <a className='option'>
+                                        <div className='general'></div>
+                                        <b className="opt-title"><FormattedMessage id="banner.general-exam" /></b>
+                                    </a>
+                                    <a className='option'>
+                                        <div className='medical-test'></div>
+                                        <b className="opt-title"><FormattedMessage id="banner.medical-test" /></b>
+                                    </a>
+                                    <a className='option'>
+                                        <div className='mental-heath'></div>
+                                        <b className="opt-title"><FormattedMessage id="banner.mental-health" /></b>
+                                    </a>
+                                    <a className='option'>
+                                        <div className='dentist'></div>
+                                        <b className="opt-title"><FormattedMessage id="banner.dentist-exam" /></b>
+                                    </a>
 
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                }
             </>
         );
     }
@@ -124,4 +134,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeHeader);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HomeHeader));

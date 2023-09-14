@@ -42,7 +42,6 @@
 
 
     .section-share {
-        border: 1px solid red;
         height: inherit;
         padding: 0 325px;
 
@@ -177,6 +176,14 @@
 
     &.about-us {
         background-color: #fff;
+    }
+}
+
+
+.section-item {
+    &:hover {
+        cursor: pointer;
+        opacity: 0.8;
     }
 }
 

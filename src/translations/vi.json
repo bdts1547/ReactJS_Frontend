@@ -39,7 +39,7 @@
             "user": "Người dùng",
             "manage-admin": "Quản lí admin",
             "manage-doctor": "Quản lí bác sĩ",
-            "crud": "crud user",
+            "manage-schedule": "Quản lí lịch khám bệnh",
             "crud-redux": "crud redux",
             "speciality": "Chuyên khoa",
             "clinic": "Phòng khám",

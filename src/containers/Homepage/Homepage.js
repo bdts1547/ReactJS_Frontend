@@ -28,7 +28,9 @@ class Homepage extends Component {
 
         return (
             <div> 
-                <HomeHeader /> 
+                <HomeHeader 
+                    isOpenBanner={true}
+                /> 
                 <Speciality 
                     settings={settings}
                 />

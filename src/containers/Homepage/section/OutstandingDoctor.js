@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router'
 import { connect } from 'react-redux';
 import * as actions from '../../../store/actions';
 
@@ -25,10 +26,13 @@ class OutstandingDoctor extends Component {
         }
     }
 
+    handleNavigateToDetailDoctor = (doctor) => {
+        this.props.history.push(`/detail-doctor/${doctor.id}`);
+    }
+
 
     render() {
         let { topDoctors } = this.state;
-        console.log(topDoctors)
 
         return (
             <div className="home-slider-content">
@@ -43,7 +47,8 @@ class OutstandingDoctor extends Component {
                                 topDoctors.map((doctor, index) => {
                                     const imageBase64 = new Buffer(doctor.image, 'base64').toString('binary');
                                     return (
-                                        <div className="section-item" key={index}>
+                                        <div className="section-item" key={index}
+                                            onClick={() => this.handleNavigateToDetailDoctor(doctor)}>
                                             <div className='item-customize' style={{ backgroundImage: `url(${imageBase64})`}}></div>
                                             <div className='item-title'>
                                                 {doctor.positionData.valueVi}, {doctor.lastName} {doctor.firstName}
@@ -79,4 +84,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(OutstandingDoctor);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(OutstandingDoctor));
