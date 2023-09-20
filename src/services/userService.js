@@ -32,7 +32,7 @@ const getAllCode = (type) => {
 }
 
 const getTopDoctors = (limit) => {
-    return axios.get(`api/top-doctors-home?limit=${limit}`);
+    return axios.get(`/api/top-doctors-home?limit=${limit}`);
 }
 
 const getAllDoctors = () => {

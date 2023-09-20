@@ -45,6 +45,9 @@
             "speciality": "Specialities",
             "clinic": "Clinics",
             "handbook": "Handbooks"
+        },
+        "doctor": {
+            "manage-schedule": "Quản lí lịch khám bệnh"
         }
     }
 }

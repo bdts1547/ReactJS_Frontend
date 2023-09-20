@@ -53,7 +53,7 @@ class DetailDoctor extends Component {
                 <HomeHeader
                     isOpenBanner={false}
                 />
-                {doctor &&
+                {doctor && 
 
                     <div className="detail-doctor-container">
                         <div className="detail-doctor-header">

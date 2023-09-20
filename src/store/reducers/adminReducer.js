@@ -116,7 +116,6 @@ const adminReducer = (state = initialState, action) => {
                 ...state,
             }
         case actionTypes.FETCH_DOCTOR_BY_ID_FAILED:
-            state.doctor = {}
             return {
                 ...state,
             }

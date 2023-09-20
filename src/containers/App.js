@@ -10,10 +10,12 @@ import { userIsAuthenticated, userIsNotAuthenticated } from '../hoc/authenticati
 
 import { path } from '../utils'
 
-import Home from '../routes/Home';
 // import Login from '../routes/Login';
 import Login from '../containers/Auth/Login';
+import Home from '../routes/Home';
 import System from '../routes/System';
+import Doctor from '../routes/Doctor';
+
 import Homepage from './Homepage/Homepage';
 import DetailDoctor from './Homepage/Doctor/DetailDoctor';
 
@@ -52,9 +54,9 @@ class App extends Component {
                                     <Route path={path.HOME} exact component={(Home)} />
                                     <Route path={path.LOGIN} component={userIsNotAuthenticated(Login)} />
                                     <Route path={path.SYSTEM} component={userIsAuthenticated(System)} />
+                                    <Route path={'/doctor'} component={userIsAuthenticated(Doctor)} />
                                     <Route path={path.HOMEPAGE} component={(Homepage)} />
-                                    <Route path='/detail-doctor/:id' component={(DetailDoctor)} />
-
+                                    <Route path={path.DETAIL_DOCTOR} component={(DetailDoctor)} />
                                 </Switch>
                             </span>
                         </CustomScrollbars>

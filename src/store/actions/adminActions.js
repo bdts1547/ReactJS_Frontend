@@ -285,7 +285,7 @@ export const fetchDoctorById = (id) => {
             }
         } catch (error) {
             dispatch({ type: actionTypes.FETCH_DOCTOR_BY_ID_FAILED });
-            console.log('fetchDoctorById error', error);
+            console.log('fetchDoctorById error => ', error);
         }
     }
 }
