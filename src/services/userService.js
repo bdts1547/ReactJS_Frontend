@@ -51,6 +51,10 @@ const editDetailDoctorService = (data) => {
     return axios.put('/api/edit-detail-doctor', {data})
 }
 
+const bulkCreateScheduleService = (data) => {
+    return axios.post('/api/bulk-create-schedule', data);
+}
+
 export {
     handleLoginAPI,
     getAllUsers,
@@ -63,4 +67,5 @@ export {
     getDoctorById,
     createDetailDoctorService,
     editDetailDoctorService,
+    bulkCreateScheduleService,
 }

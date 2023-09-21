@@ -8,6 +8,8 @@ const initialState = {
     isLoadingPosition: false,
     isLoadingRole: false,
     users: [],
+    scheduleTime: [],
+
 }
 
 const adminReducer = (state = initialState, action) => {
@@ -67,6 +69,21 @@ const adminReducer = (state = initialState, action) => {
                 ...state,
                 isLoadingRole: false,
             }
+
+            
+        // SCHEDULE TIME
+        case actionTypes.FETCH_SCHEDULE_TIME_SUCCESS:
+            state.scheduleTime = action.dataTime
+            return {
+                ...state,
+            
+            }
+        case actionTypes.FETCH_SCHEDULE_TIME_FAILED:
+            state.scheduleTime = []
+            return {
+                ...state,
+            }
+
 
 
         // FETCH ALL USER

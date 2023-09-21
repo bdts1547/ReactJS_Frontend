@@ -18,7 +18,7 @@ export const CRUD_action = {
     DELETE: "DELETE"
 };
 
-export const dateFormat = {
+export const DATE_FORMAT = {
     SEND_TO_SERVER: 'DD/MM/YYYY'
 };
 

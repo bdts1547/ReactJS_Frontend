@@ -4,7 +4,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 
 
 import Header from '../containers/Header/Header';
-import ManageSchedule from '../containers/Homepage/Admin/ManageSchedule';
+import ManageSchedule from '../containers/System/Doctor/ManageSchedule';
 
 class Doctor extends Component {
     render() {

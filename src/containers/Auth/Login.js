@@ -59,6 +59,12 @@ class Login extends React.Component {
 
     }
 
+    handleOnKeyDown = (event) => {
+        if (event.code === "Enter" || event.keyCode === 13) {
+            this.handleLogin();
+        }
+    }
+
 
     render() {
         return (
@@ -73,6 +79,7 @@ class Login extends React.Component {
                             className='form-control' 
                             placeholder='Enter your username'
                             value={this.state.username}
+                            onKeyDown={(event) => this.handleOnKeyDown(event)}
                             onChange={(event) => this.handleOnChangeUsername(event)}/>
                         </div>
                         <div className="col-12 form-group input-login">
@@ -83,6 +90,7 @@ class Login extends React.Component {
                                 className='form-control' 
                                 placeholder='Enter your password'
                                 value={this.state.password}
+                                onKeyDown={(event) => this.handleOnKeyDown(event)}
                                 onChange={(event) => this.handleOnChangePassword(event)}/>
                                 <span onClick={(event) => this.handleShowHidePassword(event)}>
                                     <i className={this.state.isShowPassword ? 'far fa-eye' : 'far fa-eye-slash'}></i>

@@ -1,7 +1,8 @@
 import actionTypes from './actionTypes';
 import {
     createNewUser, getAllCode, getAllUsers, deleteUser, updateUser, getTopDoctors,
-    getAllDoctors, getDoctorById, createDetailDoctorService, editDetailDoctorService
+    getAllDoctors, getDoctorById, createDetailDoctorService, editDetailDoctorService,
+    bulkCreateScheduleService
 } from '../../services/userService';
 import { toast } from 'react-toastify';
 
@@ -95,6 +96,30 @@ export const fetchRoleSuccess = (roles) => ({
 export const fetchRoleFailed = () => ({
     type: actionTypes.FETCH_ROLE_FAILED
 })
+
+
+// FETCH_SCHEDULE_TIME_SUCCESS
+export const fetchAllScheduleTime = () => {
+    return async (dispatch, getState) => {
+        try {
+            const res = await getAllCode('TIME');
+            if (res && res.errCode === 0) {
+                dispatch({ 
+                    type: actionTypes.FETCH_SCHEDULE_TIME_SUCCESS ,
+                    dataTime: res.data
+                });
+            } else {
+                dispatch({ type: actionTypes.FETCH_SCHEDULE_TIME_FAILED });
+                console.log(res.message);
+            }
+        } catch (error) {
+            toast.error(error);
+            dispatch({ type: actionTypes.FETCH_SCHEDULE_TIME_FAILED });
+            console.log('getAllScheduleTime error', error);
+        }
+    }
+}
+
 
 
 
@@ -336,4 +361,25 @@ export const editDetailDoctor = (data) => {
     }
 }
 
+
+// bulk Create Schedule Doctor
+export const bulkCreateSchedule = (data) => {
+    return async (dispatch, getState) => {
+        try {
+            const res = await bulkCreateScheduleService(data);
+            if (res && res.errCode === 0) {
+                toast.success(res.message);
+                dispatch({ type: actionTypes.BULK_CREATE_SCHEDULE_SUCCESS });
+            } else {
+                toast.error(res.message);
+                dispatch({ type: actionTypes.BULK_CREATE_SCHEDULE_FAILED });
+                console.log(res.message);
+            }
+        } catch (error) {
+            toast.error(error);
+            dispatch({ type: actionTypes.BULK_CREATE_SCHEDULE_FAILED });
+            console.log('bulkCreateSchedule error', error);
+        }
+    }
+}
 

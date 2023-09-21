@@ -1,0 +1,40 @@
+.manage-schedule-container {
+
+
+    .schedule-title {
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 24px;
+        text-align: center;
+        margin: 16px 0;
+    }
+
+    .hours-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 16px 0;
+
+
+        .btn-schedule {
+            font-size: 16px;
+            font-weight: 500;
+            border: 1px solid grey;
+            padding: 8px;
+            height: fit-content;
+
+            &.active {
+                background-color: rgb(27, 231, 27);
+            }
+        }
+
+
+    }
+
+    .btn-save {
+        padding: 5px 10px;
+        height: fit-content;
+    }
+
+}

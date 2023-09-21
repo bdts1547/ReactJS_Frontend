@@ -39,10 +39,10 @@ class ManageDoctor extends Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if (prevProps.doctorsRedux !== this.props.doctorsRedux
+        if (prevProps.listDoctors !== this.props.listDoctors
             || prevProps.language !== this.props.language) {
-            const doctorsRedux = this.props.doctorsRedux;
-            const options = doctorsRedux.map((doctor, index) => {
+            const listDoctors = this.props.listDoctors;
+            const options = listDoctors.map((doctor, index) => {
                 const fullName = this.props.language === LANGUAGES.VI ?
                     `${doctor.lastName} ${doctor.firstName}`
                     : `${doctor.firstName} ${doctor.lastName}`;
@@ -187,7 +187,7 @@ class ManageDoctor extends Component {
 const mapStateToProps = state => {
     return {
         language: state.app.language,
-        doctorsRedux: state.admin.doctors,
+        listDoctors: state.admin.doctors,
         doctorRedux: state.admin.doctor,
     };
 };
