@@ -6,7 +6,7 @@ import { LANGUAGES } from '../../../utils';
 
 import HomeHeader from '../HomeHeader';
 import './DetailDoctor.scss';
-
+import DoctorSchedule from './DoctorSchedule';
 
 
 class DetailDoctor extends Component {
@@ -37,7 +37,6 @@ class DetailDoctor extends Component {
     render() {
         const { language } = this.props;
         const doctor = this.state.doctor;
-        console.log('detail', doctor)
 
         let imageBinary, contentHTML;
         if (doctor && doctor.image) {
@@ -47,13 +46,12 @@ class DetailDoctor extends Component {
             contentHTML = doctor.markdown.contentHTML;
         }
 
-        console.log(contentHTML)
         return (
             <>
                 <HomeHeader
                     isOpenBanner={false}
                 />
-                {doctor && 
+                {doctor &&
 
                     <div className="detail-doctor-container">
                         <div className="detail-doctor-header">
@@ -77,7 +75,14 @@ class DetailDoctor extends Component {
                                 </div>
                             </div>
                             <div className="doctor-schedule">
-                                Schedule
+                                <div className="schedule-content">
+                                    <DoctorSchedule 
+                                        doctorIdFromParent={doctor.id ? doctor.id : null}
+                                    />
+                                </div>
+                                <div className="schedule-desc">
+
+                                </div>
                             </div>
                         </div>
                         <div className="detail-doctor-body">

@@ -100,8 +100,10 @@ class ManageSchedule extends Component {
             isValid = false;
             toast.error("Invalid schedule!");
         }
-        // moment(selectDate[0]).format(DATE_FORMAT.SEND_TO_SERVER)
+       
         const formatDate = new Date(selectDate[0]).getTime();
+        // const formatDate = moment(new Date(selectDate[0])).startOf('day').valueOf();
+        console.log(formatDate);
         if (isValid) {
             let data = scheduleSelected.map((item) => {
                 let obj = {};
@@ -146,7 +148,7 @@ class ManageSchedule extends Component {
                                 className="form-control"
                                 onChange={this.handleOnChangeDatePicker}
                                 value={this.state.selectDate}
-                                minDate={new Date()}
+                                minDate={new Date().setHours(0,0,0,0)}
                             />
                         </div>
                         <div className="col-12 hours-container">

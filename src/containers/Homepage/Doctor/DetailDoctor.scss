@@ -36,6 +36,20 @@
                     white-space: break-spaces;
                 }
             }
+
+            
+        }
+
+        .doctor-schedule {
+            display: flex;
+            
+            .schedule-content {
+                width: 50%;
+            }
+
+            .schedule-desc {
+                width: 50%;
+            }
         }
     }
 

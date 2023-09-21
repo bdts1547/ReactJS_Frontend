@@ -2,7 +2,7 @@ import actionTypes from './actionTypes';
 import {
     createNewUser, getAllCode, getAllUsers, deleteUser, updateUser, getTopDoctors,
     getAllDoctors, getDoctorById, createDetailDoctorService, editDetailDoctorService,
-    bulkCreateScheduleService
+    bulkCreateScheduleService, getDoctorScheduleByDate,
 } from '../../services/userService';
 import { toast } from 'react-toastify';
 
@@ -187,7 +187,6 @@ export const editUserRedux = (user) => {
     return async (dispatch, getState) => {
         try {
             const res = await updateUser(user);
-            console.log(res);
             if (res && res.errCode === 0) {
                 toast.success('Edit user successful!')
                 dispatch(editUserSuccess());
@@ -383,3 +382,26 @@ export const bulkCreateSchedule = (data) => {
     }
 }
 
+
+
+
+// FETCH_DOCTOR_SCHEDULE_BY_ID
+export const fetchDoctorScheduleById = (doctorId, date) => {
+    return async (dispatch, getState) => {
+        try {
+            const res = await getDoctorScheduleByDate(doctorId, date);
+            if (res && res.errCode === 0) {
+                dispatch({
+                    type: actionTypes.FETCH_DOCTOR_SCHEDULE_BY_DATE_SUCCESS,
+                    doctorSchedule: res.data,
+                });
+            } else {
+                dispatch({ type: actionTypes.FETCH_DOCTOR_SCHEDULE_BY_DATE_FAILED });
+                console.log(res.message);
+            }
+        } catch (error) {
+            dispatch({ type: actionTypes.FETCH_DOCTOR_SCHEDULE_BY_DATE_FAILED });
+            console.log('fetchDoctorScheduleById error => ', error);
+        }
+    }
+}

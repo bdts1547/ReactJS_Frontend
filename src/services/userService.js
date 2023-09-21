@@ -1,3 +1,4 @@
+import { dateFilter } from "react-bootstrap-table2-filter";
 import axios from "../axios";
 
 
@@ -55,17 +56,13 @@ const bulkCreateScheduleService = (data) => {
     return axios.post('/api/bulk-create-schedule', data);
 }
 
+const getDoctorScheduleByDate = (doctorId, date) => {
+    return axios.get(`/api/get-schedule-by-date?doctorId=${doctorId}&date=${date}`);
+}
+
 export {
-    handleLoginAPI,
-    getAllUsers,
-    createNewUser,
-    deleteUser,
-    updateUser,
-    getAllCode,
-    getTopDoctors,
-    getAllDoctors,
-    getDoctorById,
-    createDetailDoctorService,
-    editDetailDoctorService,
-    bulkCreateScheduleService,
+    handleLoginAPI, getAllUsers, createNewUser, deleteUser, updateUser,
+    getAllCode, getTopDoctors, getAllDoctors, getDoctorById,
+    createDetailDoctorService, editDetailDoctorService, bulkCreateScheduleService,
+    getDoctorScheduleByDate,
 }

@@ -9,6 +9,7 @@ const initialState = {
     isLoadingRole: false,
     users: [],
     scheduleTime: [],
+    doctorSchedule: [],
 
 }
 
@@ -133,6 +134,18 @@ const adminReducer = (state = initialState, action) => {
                 ...state,
             }
         case actionTypes.FETCH_DOCTOR_BY_ID_FAILED:
+            return {
+                ...state,
+            }
+
+
+         // FETCH DOCTOR SCHEDULE BY DATE
+         case actionTypes.FETCH_DOCTOR_SCHEDULE_BY_DATE_SUCCESS:
+            state.doctorSchedule = action.doctorSchedule
+            return {
+                ...state,
+            }
+        case actionTypes.FETCH_DOCTOR_SCHEDULE_BY_DATE_FAILED:
             return {
                 ...state,
             }
